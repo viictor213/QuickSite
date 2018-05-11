@@ -3,6 +3,59 @@
 <head>
 </head>
 <body>
-  	
+<form method="POST" enctype="multipart/form-data">
+	<input type="hidden" name="size" value="1000000">
+    <div class="input-group" style="margin-top: 5px;">
+      <input type="text" class="form-control" id="image_text" placeholder="Describe tu QuickPost..." style="margin-left: 5px" required>
+      <span class="input-group-btn">
+      <button class="btn btn-default" type="submit" name="upload" style="margin-left: 5px"><i class="fas fa-paper-plane"></i></button>
+      <input type="file" name="image" id="file" style="display: none;" accept="image/jpeg, image/gif, image/png" onchange="PreviewImage()";>
+      <button class="btn btn-default" type="button" style="margin-right: 5px" onclick="document.getElementById('file').click();"><i class="fas fa-camera"></i></button>
+  	</span>
+  </div>
+</form>
+<img src="" id="imgPost" style="float: right;width: 100%; max-width: 200px; border-radius: 5px; margin: 5px 5px 0 0">
+<?php
+
+	foreach ($getPost as $get) {
+
+		if($get['image'] == null){
+	echo "<div class='well' style='margin-top: 20px; margin-left: 10px'>";
+      echo "<div class='media'>";
+      	echo "<a class='pull-left' href='#'>";
+    		echo "<img src='profile_images/".$get['imgUser']."' style='border-radius: 50px; width: 80px;height: 80px;border: 2px solid; border-color: #28A745';>";
+  		echo "</a>";
+  		echo "<div class='media-body' style='margin-left: 5px'>";
+    		echo "<h4 class='media-heading'>".$get['userPost']."</h4>";
+          echo "<p style='width: 40%''>".$get['image_text']."</p>";
+            echo "<p class='card-text'><small class='text-muted'>".$get['dateP']."</small></p>";
+		echo "<hr>";
+       echo "</div>";
+    echo "</div>";
+   echo "</div>";
+		}else{
+
+	echo "<div class='well' style='margin-top: 20px; margin-left: 10px'>";
+      echo "<div class='media'>";
+      	echo "<a class='pull-left' href='#'>";
+    		echo "<img src='profile_images/".$get['imgUser']."' style='border-radius: 50px; width: 80px;height: 80px;border: 2px solid; border-color: #28A745';>";
+  		echo "</a>";
+  		echo "<div class='media-body' style='margin-left: 5px'>";
+    		echo "<h4 class='media-heading'>".$get['userPost']."</h4>";
+    	echo "<img src='images/".$get['image']."' style='width: 100%; max-width: 450px;border-radius: 5px'>";
+          echo "<p style='width: 40%''>".$get['image_text']."</p>";
+            echo "<p class='card-text'><small class='text-muted'>".$get['dateP']."</small></p>";
+		echo "<hr>";
+       echo "</div>";
+    echo "</div>";
+   echo "</div>";
+		}
+
+	
+
+	}
+
+?>
+
 </body>
 </html>

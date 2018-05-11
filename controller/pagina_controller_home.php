@@ -1,6 +1,6 @@
 <?php
 
-    if ($_SESSION["autenticado"] !== null){
+    //f ($_SESSION["autenticado"] !== null){
 
         require_once ("model/pagina_model.php");
         $resultHome = new pagina_model();
@@ -31,10 +31,10 @@
 
         }
 
-        $subnauticGet = $resultHome->GetUserPost();
+        $getPost = $resultHome->GetUserPost();
 
         require_once("view/pagina_view_home.php");
-    }else{
+    //}else{
 
-        header("location: index.php");
-    }
+        //header("location: index.php");
+    //}
