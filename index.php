@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
-    <link rel="icon" type="image/png" href="resources/git.sh.png">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>

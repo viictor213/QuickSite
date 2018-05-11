@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
-    <link rel="icon" type="image/png" href="resources/git.sh.png">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -18,6 +18,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
+      
+      <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Busca usuarios..." aria-label="Search">
+    <button class="btn btn-success" type="submit" style="margin-left:-7px; border-color: white;"><i class="fas fa-search"></i></button>
+  </form>
       <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-home" style="margin-right: 5px"></i>Inicio</a>
       <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-user-circle"style="margin-right: 5px"></i>Perfil</a>
       <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-cog"style="margin-right: 5px"></i>Ajustes</a>
