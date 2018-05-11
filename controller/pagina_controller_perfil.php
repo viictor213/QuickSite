@@ -1,42 +1,53 @@
   <?php
 
-if ($_SESSION['autenticado'] !== null){
+//if ($_SESSION['autenticado'] !== null){
 
     require_once("model/pagina_model.php");
 
     $result = new pagina_model();
 
-    $user = $_SESSION['autenticado'];
+    //$user = $_SESSION['autenticado'];
+    $user = $_GET['user'];
 
-    $subnautic = $result->UserProfile($user);
+    $getUser = $result->UserProfile($user);
+
+    $getPost = $result->GetUserPostProfile($user);
+
 
     if (isset($_POST['aceptar'])){
 
-        $user = $_SESSION['autenticado'];
-
         $subnauticGet = $result->UserProfile($user);
-
-        $userUp = null;
 
         foreach ($subnauticGet as $get){
 
             $userUp = $get['user'];
+            $imageBaNow = $get['banner_profile'];
+            $imageProNow = $get['img_profile'];
         }
 
-        $image = $_FILES['image']['name'];
+        $imageProfile = $_FILES['imageProfile']['name'];
+        $imageBanner = $_FILES['imageBanner']['name'];
 
-        $target = "profile_images/" . basename($image);
+        if ($imageProfile == null) {
+            $imageProfile = $imageProNow;
+        }else if($imageBanner == null){
+            $imageBanner = $imageBaNow;
+        }
 
-        $subnauticUp = $result->UpdateUser($image, $userUp);
+        $targetProfile = "profile_images/" . basename($imageProfile);
+        $targetBanner = "banner_profile/" . basename($imageBanner);
 
-        move_uploaded_file($_FILES['image']['tmp_name'], $target);
+        $subnauticUp = $result->UpdateUser($imageProfile, $imageBanner, $userUp);
 
-        header("location: controller/confirm.php");
+        move_uploaded_file($_FILES['imageProfile']['tmp_name'], $targetProfile);
+        move_uploaded_file($_FILES['imageBanner']['tmp_name'], $targetBanner);
+
+        header("refresh:0");
     }
 
     require_once ("view/pagina_view_perfil.php");
 
-}else{
+//}else{
 
-    header("location: index.php");
-}
+    //header("location: index.php");
+//}

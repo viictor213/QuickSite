@@ -11,22 +11,18 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-  <img src="resources/LogoIn.png" style="width: 50px; margin-right: 10px">
   <a class="navbar-brand" href="#" style="font-family: Passion One;font-size: 40px">QUICKSITE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-home" style="margin-right: 5px"></i>Inicio</a>
+      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-home" style="margin: 5px"></i>Inicio</a>
       <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-user-circle"style="margin-right: 5px"></i>Perfil</a>
       <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-cog"style="margin-right: 5px"></i>Ajustes</a>
     </div>
   </div>
 </nav>
-    
-
-</ul>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

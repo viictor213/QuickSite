@@ -43,7 +43,7 @@ class pagina_model
 
     public function GetUserReg($userReg){
 
-        $query = $this->db->query("SELECT * FROM users WHERE user = '$userReg'");
+        $query = $this->db->query("SELECT * FROM users WHERE user = '".$userReg."'");
 
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
@@ -65,9 +65,22 @@ class pagina_model
         return $this->post;
     }
 
-    public function UpdateUser($newImage, $user){
+     public function GetUserPostProfile($user){
+
+        $query = $this->db->query("SELECT * FROM post WHERE userPost = '".$user."' ORDER BY id DESC");
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+
+            $this->post[] = $row;
+        }
+
+        return $this->post;
+    }
+
+    public function UpdateUser($newImage, $newBanner, $user){
 
         $this->db->query("UPDATE users SET img_profile= '".$newImage."' WHERE user = '".$user."'");
+        $this->db->query("UPDATE users SET banner_profile= '".$newBanner."' WHERE user = '".$user."'");
         $this->db->query("UPDATE post SET imgUser= '".$newImage."' WHERE userPost = '".$user."'");
 
     }
