@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body  style="background-color: #DFFAD5">
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <img src="resources/LogoIn.png" style="width: 50px; margin-right: 10px">
     <a class="navbar-brand" href="#" style="font-family: Passion One, arial;font-size: 40px">QUICKSITE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

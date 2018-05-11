@@ -8,7 +8,7 @@
         <?php
 
         foreach ($getUser as $get){
-            echo "<div class='card bg-success' id='imgBanner' style='border-radius: 0 0 10px 10px;height: 250px;background-image: url(banner_profile/".$get['banner_profile'].");background-repeat: no-repeat;background-size: cover;margin-top: 80px'>";
+            echo "<div class='card bg-success' id='imgBanner' style='border-radius: 0 0 10px 10px;height: 250px;background-image: url(banner_profile/".$get['banner_profile'].");background-repeat: no-repeat;background-size: cover'>";
             echo "<div class='card-body'>";
             ?>
             <?php
