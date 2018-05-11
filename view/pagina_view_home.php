@@ -22,11 +22,11 @@
 		if($get['image'] == null){
 	echo "<div class='well' style='margin-top: 20px; margin-left: 10px'>";
       echo "<div class='media'>";
-      	echo "<a class='pull-left' href='#'>";
+      	echo "<a class='pull-left' href='perfil.php?user=".$get['userPost']."'>";
     		echo "<img src='profile_images/".$get['imgUser']."' style='border-radius: 50px; width: 80px;height: 80px;border: 2px solid; border-color: #28A745';>";
   		echo "</a>";
   		echo "<div class='media-body' style='margin-left: 5px'>";
-    		echo "<h4 class='media-heading'>".$get['userPost']."</h4>";
+    		echo "<a class='text-dark' style='text-decoration: none' href='perfil.php?user=".$get['userPost']."'><h4 class='media-heading'>".$get['userPost']."</h4></a>";
           echo "<p style='width: 40%''>".$get['image_text']."</p>";
             echo "<p class='card-text'><small class='text-muted'>".$get['dateP']."</small></p>";
 		echo "<hr>";
@@ -37,11 +37,11 @@
 
 	echo "<div class='well' style='margin-top: 20px; margin-left: 10px'>";
       echo "<div class='media'>";
-      	echo "<a class='pull-left' href='#'>";
+      	echo "<a class='pull-left' href='perfil.php?user=".$get['userPost']."'>";
     		echo "<img src='profile_images/".$get['imgUser']."' style='border-radius: 50px; width: 80px;height: 80px;border: 2px solid; border-color: #28A745';>";
   		echo "</a>";
   		echo "<div class='media-body' style='margin-left: 5px'>";
-    		echo "<h4 class='media-heading'>".$get['userPost']."</h4>";
+    		echo "<a class='text-dark' style='text-decoration: none' href='perfil.php?user=".$get['userPost']."'><h4 class='media-heading'>".$get['userPost']."</h4></a>";
     	echo "<img src='images/".$get['image']."' style='width: 100%; max-width: 450px;border-radius: 5px'>";
           echo "<p style='width: 40%''>".$get['image_text']."</p>";
             echo "<p class='card-text'><small class='text-muted'>".$get['dateP']."</small></p>";
