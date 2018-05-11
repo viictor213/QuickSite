@@ -46,6 +46,13 @@ error_reporting(0);
         header("refresh:0");
     }
 
+    if(isset($_POST['search'])){
+
+        $searchText = $_POST['searchText'];
+
+        header("location: search.php?user=".$searchText."");
+    }
+
     require_once ("view/pagina_view_perfil.php");
 
   }else{

@@ -53,6 +53,18 @@ class pagina_model
         return $this->user;
     }
 
+    public function Search($search){
+
+        $query = $this->db->query("SELECT * FROM users WHERE user LIKE '".$search."%'");
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+
+            $this->user[] = $row;
+        }
+
+        return $this->user;
+    }
+
     public function GetUserPost(){
 
         $query = $this->db->query("SELECT * FROM post ORDER BY id DESC");

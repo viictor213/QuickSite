@@ -78,6 +78,13 @@ if ($_SESSION["autenticado"] !== null){
         }
     }
 
+    if(isset($_POST['search'])){
+
+        $searchText = $_POST['searchText'];
+
+        header("location: search.php?user=".$searchText."");
+    }
+
     require_once("view/pagina_view.php");
 
 }
