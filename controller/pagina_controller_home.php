@@ -3,6 +3,7 @@
     //f ($_SESSION["autenticado"] !== null){
 
         require_once ("model/pagina_model.php");
+
         $resultHome = new pagina_model();
 
         if (isset($_POST['upload'])){
@@ -10,11 +11,11 @@
             $image = $_FILES['image']['name'];
             $image_text = trim($_POST['image_text']);
 
-            $dateP = date("d-m-Y | H:i");
+            $dateP = date("d/m/Y | H:i");
 
             $target = "images/" . basename($image);
 
-            $user = $_SESSION['autenticado'];
+            $user = "pepito el mono";
 
             $subnautic = $resultHome->UserProfile($user);
 
