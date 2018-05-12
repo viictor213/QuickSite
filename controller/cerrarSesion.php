@@ -4,3 +4,4 @@
     $_SESSION['autenticado'] = null;
     session_destroy();
     header("location: ../index.php");
+?>

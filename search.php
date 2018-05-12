@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <img src="resources/LogoIn.png" style="width: 50px; margin-right: 10px">
-  <a class="navbar-brand" href="home.php" style="font-family: Passion One;font-size: 40px">QUICKSITE</a>
+    <a class="navbar-brand" href="home.php" style="font-family: Passion One, arial;font-size: 40px">QUICKSITE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,9 +22,16 @@
     <input class="form-control mr-sm-2" type="search" name="searchText" placeholder="Busca usuarios..." aria-label="Search">
     <button class="btn btn-success" type="submit" name="search" style="margin-left:-7px; border-color: white;"><i class="fas fa-search"></i></button>
     </form>
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-home" style="margin: 5px"></i>Inicio</a>
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-user-circle"style="margin-right: 5px"></i>Perfil</a>
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-cog"style="margin-right: 5px"></i>Ajustes</a>
+      <a class="nav-item nav-link active" style="font-family: roboto, arial;font-size: 17px" href="home.php"><i class="fas fa-home" style="margin-right: 5px"></i>Inicio</a>
+      <a class="nav-item nav-link active" style="font-family: roboto, arial;font-size: 17px" href="perfil.php"><i class="fas fa-user-circle"style="margin-right: 5px"></i>Perfil</a>
+      <div class="dropdown">
+  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+    <i class="fas fa-cog" style="margin-right: 5px"></i>Ajustes
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt" style="margin-right: 5px"></i>Cerrar Session</a>
+  </div>
+</div>
     </div>
   </div>
 </nav>

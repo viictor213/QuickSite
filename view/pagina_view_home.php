@@ -23,8 +23,8 @@
 		if($get['image'] == null){
 	echo "<div class='well' style='margin-top: 20px; margin-left: 10px'>";
       echo "<div class='media'>";
+       echo "<p style='border-radius: 90px; width: 80px; height: 80px;background-image: url(profile_images/".$get['imgUser'].");background-repeat: no-repeat;background-size: cover;></p>";
       	echo "<a class='pull-left' href='perfil.php?user=".$get['userPost']."'>";
-    		echo "<img src='profile_images/".$get['imgUser']."' style='border-radius: 50px; width: 80px;height: 80px;border: 2px solid; border-color: #28A745';>";
   		echo "</a>";
   		echo "<div class='media-body' style='margin-left: 5px'>";
     		echo "<a class='text-dark' style='text-decoration: none' href='perfil.php?user=".$get['userPost']."'><h4 class='media-heading'>".$get['userPost']."</h4></a>";
@@ -38,8 +38,8 @@
 
 	echo "<div class='well' style='margin-top: 20px; margin-left: 10px'>";
       echo "<div class='media'>";
-      	echo "<a class='pull-left' href='perfil.php?user=".$get['userPost']."'>";
-    		echo "<img src='profile_images/".$get['imgUser']."' style='border-radius: 50px; width: 80px;height: 80px;border: 2px solid; border-color: #28A745';>";
+      echo "<p style='border-radius: 90px; width: 80px; height: 80px;background-image: url(profile_images/".$get['imgUser'].");background-repeat: no-repeat;background-size: cover;></p>";
+      echo "<a class='pull-left' href='perfil.php?user=".$get['userPost']."'>";
   		echo "</a>";
   		echo "<div class='media-body' style='margin-left: 5px'>";
     		echo "<a class='text-dark' style='text-decoration: none' href='perfil.php?user=".$get['userPost']."'><h4 class='media-heading'>".$get['userPost']."</h4></a>";

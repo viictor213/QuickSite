@@ -23,9 +23,16 @@
     <input class="form-control mr-sm-2" type="search" name="searchText" placeholder="Busca usuarios..." aria-label="Search">
     <button class="btn btn-success" type="submit" name="search" style="margin-left:-7px; border-color: white;"><i class="fas fa-search"></i></button>
     </form>
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-home" style="margin-right: 5px"></i>Inicio</a>
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-user-circle"style="margin-right: 5px"></i>Perfil</a>
-      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="#"><i class="fas fa-cog"style="margin-right: 5px"></i>Ajustes</a>
+      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="home.php"><i class="fas fa-home" style="margin-right: 5px"></i>Inicio</a>
+      <a class="nav-item nav-link active" style="font-family: roboto;font-size: 17px" href="perfil.php"><i class="fas fa-user-circle"style="margin-right: 5px"></i>Perfil</a>
+      <div class="dropdown">
+  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+    <i class="fas fa-cog" style="margin-right: 5px"></i>Ajustes
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt" style="margin-right: 5px"></i>Cerrar Session</a>
+  </div>
+</div>
     </div>
   </div>
 </nav>
