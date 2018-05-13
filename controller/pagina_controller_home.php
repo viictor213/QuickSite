@@ -15,7 +15,7 @@
 
             $target = "images/" . basename($image);
 
-            $user = "pepito el mono";
+            $user = "joselitoxd";
 
             $subnautic = $resultHome->UserProfile($user);
 
@@ -28,7 +28,7 @@
 
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
 
-            header("location: controller/confirm.php");
+            header("refresh: 0");
 
         }
 

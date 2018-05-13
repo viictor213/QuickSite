@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-    <link rel="stylesheet" type="text/css" href="styles/cards-gallery.css">
     <link rel="icon" type="image/png" href="resources/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
