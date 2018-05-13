@@ -88,7 +88,7 @@
       echo "<div class='media-body' style='margin-left: 5px; margin-right: 5px'>";
         echo "<h4 class='media-heading'><a class='text-dark' style='text-decoration: none;' href='perfil.php?user=".$get['userPost']."'>".$get['userPost']."</a>";
         if($get['userPost'] == "joselitoxd"){
-            echo "<button type='button' style='margin-top: 5px;padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
+            echo "<button type='button' style='padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
         <i class='fas fa-ellipsis-h'></i>
         </button>
         <div class='dropdown-menu '>
@@ -112,7 +112,7 @@
       echo "<div class='media-body' style='margin-left: 5px'>";
         echo "<h4 class='media-heading'><a class='text-dark' style='text-decoration: none;' href='perfil.php?user=".$get['userPost']."'>".$get['userPost']."</a>";
         if($get['userPost'] == "joselitoxd"){
-            echo "<button type='button' style='margin-top: 5px;padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
+            echo "<button type='button' style='padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
         <i class='fas fa-ellipsis-h'></i>
         </button>
         <div class='dropdown-menu '>

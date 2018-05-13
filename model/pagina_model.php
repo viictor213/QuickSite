@@ -77,6 +77,19 @@ class pagina_model
         return $this->post;
     }
 
+    public function GetUserPostByUs($id){
+
+        $query = $this->db->query("SELECT userPost FROM post WHERE id = ".$id."");
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+
+            $this->post[] = $row;
+        }
+
+        return $this->post;
+    }
+
+
      public function GetUserPostProfile($user){
 
         $query = $this->db->query("SELECT * FROM post WHERE userPost = '".$user."' ORDER BY id DESC");
