@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="resources/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
-<body  style="background-color: #DFFAD5">
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <img src="resources/LogoIn.png" style="width: 50px; margin-right: 10px">
     <a class="navbar-brand" href="home.php" style="font-family: Passion One, arial;font-size: 40px">QUICKSITE</a>

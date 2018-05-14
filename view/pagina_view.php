@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
 </head>
 <body>
-<div class="testbox">
-    <h1>REGISTRATE</h1>
-    <form method="post" enctype="multipart/form-data">
-        <hr>
-        <img src="resources/default-profile-picture-5.jpg" id="uploadPreview"/>
-        <input type="text" name="userReg" id="name" placeholder="Usuario" maxlength="13" required onChange="while(''+this.value.charAt(0) ===' ')this.value=this.value.substring(1,this.value.length)"/>
-        <input type="password" name="passwdReg" id="name" placeholder="Contrase&ntilde;a" minlength="8" required onChange="while(''+this.value.charAt(0) ===' ')this.value=this.value.substring(1,this.value.length)"/>
-        <input type="email" name="emailReg" id="name" placeholder="Email" maxlength="30" required onChange="while(''+this.value.charAt(0) ===' ')this.value=this.value.substring(1,this.value.length)"/>
-        <input type="file" name="imgReg" id="file" style="display: none" accept="image/jpeg, image/gif, image/png" onchange="PreviewImageReg()";/>
-        <input type="button" class="button" value="Imagen Perfil" style="padding-left: 10px" onclick="document.getElementById('file').click();">
-        <input type="submit" class="button" value="Registrarse" name="reg" >
-    </form>
+  <div  style="float:left">
+<article class="card-body mx-auto" style="max-width: 400px;">
+    <h4 class="card-title mt-3 text-center">Crea una cuenta</h4>
+    <p class="text-center">Empieza a difrutar de QuickSite</p>
+    <form>
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-address-card"></i> </span>
+         </div>
+        <input name="" class="form-control" placeholder="Nombre completo" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+         </div>
+        <input name="" class="form-control" placeholder="Email " type="email" size="100px">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+         </div>
+        <input name="" class="form-control" placeholder="Nombre de Usuario" type="text" size="100px">
+        </div> <!-- form-group// -->
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+        <input class="form-control" placeholder="Contrase&ntilde;a" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock-open"></i> </span>
+        </div>
+        <input class="form-control" placeholder="Repite la contrase&ntilde;a" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-calendar-alt" min="1920-01-01" max="2010-12-31" required></i> </span>
+         </div>
+        <input name="" class="form-control" type="date" size="100px">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> ¡Entra Ya!  </button>
+    </div> <!-- form-group// -->
+
+  </form>
+</article>
+</div> <!-- card.// -->
+
 </div>
-<img src="resources/Octocat.png" id="octocat">
-<footer class="footer">
-    <p id="year">GitWeb 2017, 2018</p>
-    <p id="contact">Contact information: <a href="mailto:ericsoo78955@gmai.com">
-            ericsoo78955@gmail.com</a></p>
-</footer>
+<!--container end.//-->
+</form>
+
 </body>
 </html>

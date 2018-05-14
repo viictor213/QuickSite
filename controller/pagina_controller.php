@@ -4,10 +4,10 @@ error_reporting(1);
 
 session_start();
 
-if ($_SESSION["autenticado"] !== null){
+//if ($_SESSION["autenticado"] !== null){
 
-    header("location: home.php");
-}else{
+    //header("location: home.php");
+//}else{
 
     require_once("model/pagina_model.php");
 
@@ -78,13 +78,6 @@ if ($_SESSION["autenticado"] !== null){
         }
     }
 
-    if(isset($_POST['search'])){
-
-        $searchText = $_POST['searchText'];
-
-        header("location: search.php?user=".$searchText."");
-    }
-
     require_once("view/pagina_view.php");
 
-}
+//}

@@ -3,6 +3,7 @@
 <head>
 </head>
 <body>
+<div class="container">
 <form method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="size" value="1000000">
     <div class="input-group" style="margin-top: 5px;">
@@ -89,5 +90,6 @@
 
 ?>
 </section>
+</div>
 </body>
 </html>
