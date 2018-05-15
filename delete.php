@@ -1,5 +1,6 @@
 <?php
-
+  
+  session_start();
 	require_once("model/pagina_model.php");
 
     $result = new pagina_model();
@@ -14,13 +15,13 @@
 
        }   
 
-    if($userPost == "joselitoxd"){
+    if($userPost == $_SESSION['autenticado']){
     	    $deletePost = $result->DeleteUserPost($id);
     	    header("location: ".$_SERVER['HTTP_REFERER']);
 
 
     }else{
-    	    header("location: home.php");
+    	 header("location: home.php");
 
     }
 

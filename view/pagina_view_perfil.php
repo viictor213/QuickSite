@@ -7,42 +7,38 @@
     <form method="post" enctype="multipart/form-data">
         <?php
         foreach ($getUser as $get){
-            echo "<div class='card bg-success' id='imgBanner' style='border-radius: 0 0 10px 10px;height: 250px;background-image: url(banner_profile/".$get['banner_profile'].");background-repeat: no-repeat;background-size: cover'>";
-            echo "<div class='card-body'>";
+            echo "<p id='imgBanner' style='border-radius: 0 0 10px 10px;height: 250px;background-image: url(banner_profile/".$get['banner_profile'].");background-repeat: no-repeat;background-size: cover'>";
             ?>
             <?php
 
-                if($_GET['user'] == "joselitoxd"){
+                if($_GET['user'] == $_SESSION['autenticado']){
                     ?>
-                    <button class='btn btn-success' type="button" onclick='document.getElementById("banner").click();'><i class='fas fa-edit'></i></button>
-                    <a href="perfil.php" class="btn btn-danger float-right text-light" style="display: none; margin-left: 5px" id="botonCancelar" name="cancelar">Cancelar</a>
-                    <input type="submit" value="Aceptar Cambios" class="btn btn-success float-right" style="display: none;" id="botonAceptar" name="aceptar">
+                    <button class='btn btn-success' style="margin: 7px" type="button" onclick='document.getElementById("banner").click();'><i class='fas fa-edit'></i></button>
+                    <a href="perfil.php" class="btn btn-danger float-right text-light" style="display: none; margin: 5px 5px 0 0" id="botonCancelar" name="cancelar">Cancelar</a>
+                    <input type="submit" value="Aceptar Cambios" class="btn btn-success float-right" style="display: none; margin: 5px 5px 0 0" id="botonAceptar" name="aceptar">
                 <?php
                 }
                 ?>
             
             <?php
-            echo "</div>";
-            echo "</div>";
-            echo "<div class='card bg-success' id='imgPerfil' style='border-radius: 90px; width: 150px; height: 150px;position: relative;top: -80px; margin: 0 auto;background-image: url(profile_images/".$get['img_profile'].");background-repeat: no-repeat;background-size: cover; overflow: hidden'>";
-            echo "<div class='card-body'>";
+            echo "</p>";
+            echo "<p  id='imgPerfil' style='border-radius: 90px; width: 150px; height: 150px;position: relative;top: -90px; margin: 0 auto;background-image: url(profile_images/".$get['img_profile'].");background-repeat: no-repeat;background-size: cover; overflow: hidden'>";
             ?>
             <?php
 
-                if($_GET['user'] == "joselitoxd"){
+                if($_GET['user'] == $_SESSION['autenticado']){
                     ?>
-                    <button class='btn btn-success' type="button" onclick='document.getElementById("profile").click();' style='position: relative; top: 90px; width: 170px;left:-27px;background-color: rgba(92,184,92,.8);'><i class='fas fa-edit'></i></button>
+                    <button class='btn btn-success' type="button" onclick='document.getElementById("profile").click();' style='position: relative; top: 115px; width: 130px;left: 10px;background-color: rgba(92,184,92,.8);'><i class='fas fa-edit'></i></button>
                     <?php
                 }
 
             ?>
             
             <?php
-            echo "</div>";
-            echo "</div>";
+            echo "</p>";
 
-            echo "<h3 style='text-align: center;position: relative;top: -80px'>".$get['user']."</h3>";
-            echo "<h5 style='text-align: center;position: relative;top: -80px'>".$get['email']."</h5>";
+            echo "<h3 style='text-align: center;position: relative;top: -85px'>".$get['user']."</h3>";
+            echo "<h5 style='text-align: center;position: relative;top: -85px'>".$get['email']."</h5>";
         }
     ?>
      <input type='file' name='imageProfile' id='profile' style='display: none;' accept='image/jpeg, image/gif, image/png' onchange='PreviewImagePerfil()';>
@@ -55,7 +51,7 @@
             <div class="heading">
                 <?php
 
-                    if($_GET['user'] == "joselitoxd"){
+                    if($_GET['user'] == $_SESSION['autenticado']){
 
                         echo "<h2>Mis QuickPosts</h2>";
                     }else{
@@ -68,7 +64,7 @@
     <?php
 
         if($getPost == null){
-            if($_GET['user'] == "joselitoxd"){
+            if($_GET['user'] == $_SESSION['autenticado']){
 
                         echo "<h2 style='margin-left: 15px'>Todavia no tienes QuickPosts, Publica!</h2>";
                     }else{
@@ -87,7 +83,7 @@
       echo "</a>";
       echo "<div class='media-body' style='margin-left: 5px; margin-right: 5px'>";
         echo "<h4 class='media-heading'><a class='text-dark' style='text-decoration: none;' href='perfil.php?user=".$get['userPost']."'>".$get['userPost']."</a>";
-        if($get['userPost'] == "joselitoxd"){
+        if($get['userPost'] == $_SESSION['autenticado']){
             echo "<button type='button' style='padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
         <i class='fas fa-ellipsis-h'></i>
         </button>
@@ -111,7 +107,7 @@
       echo "</a>";
       echo "<div class='media-body' style='margin-left: 5px'>";
         echo "<h4 class='media-heading'><a class='text-dark' style='text-decoration: none;' href='perfil.php?user=".$get['userPost']."'>".$get['userPost']."</a>";
-        if($get['userPost'] == "joselitoxd"){
+        if($get['userPost'] == $_SESSION['autenticado']){
             echo "<button type='button' style='padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
         <i class='fas fa-ellipsis-h'></i>
         </button>

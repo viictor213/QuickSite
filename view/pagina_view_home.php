@@ -35,7 +35,7 @@
       echo "<div class='media-body' style='margin-left: 5px; margin-right: 5px'>";
       
         echo "<h4 class='media-heading'><a class='text-dark' style='text-decoration: none;' href='perfil.php?user=".$get['userPost']."'>".$get['userPost']."</a>";
-        if($get['userPost'] == "joselitoxd"){
+        if($get['userPost'] == $_SESSION['autenticado']){
             echo "<button type='button' style='padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
         <i class='fas fa-ellipsis-h'></i>
         </button>
@@ -44,9 +44,11 @@
         </div>";
         }
         echo "</h4>";
-         
           echo "<p>".$get['image_text']."</p>";
-            echo "<p class='card-text'><small class='text-muted'>".$get['dateP']."</small></p>";
+            echo "<p class='card-text float-left'><small class='text-muted'>".$get['dateP']."</small></p>";
+             echo "<div class='btn-group'>
+  <a style='margin: -5px 0 0 5px' class='btn btn-success' href='like.php?type=post&id=".$get['id']."'><i class='fas fa-heart' style='margin-right: 5px'></i>".$get['likes']."</a>";
+  echo "</div>";
     echo "<hr>";
        echo "</div>";
     echo "</div>";
@@ -61,7 +63,7 @@
       echo "</a>";
       echo "<div class='media-body' style='margin-left: 5px'>";
         echo "<h4 class='media-heading'><a class='text-dark' style='text-decoration: none;' href='perfil.php?user=".$get['userPost']."'>".$get['userPost']."</a>";
-        if($get['userPost'] == "joselitoxd"){
+        if($get['userPost'] == $_SESSION['autenticado']){
             echo "<button type='button' style='padding-left: 12px; margin-left: 5px;' class='btn' data-toggle='dropdown'>
         <i class='fas fa-ellipsis-h'></i>
         </button>
@@ -74,7 +76,10 @@
             echo "<img src='images/".$get['image']."' style='width: 100%; max-width: 450px;border-radius: 5px'>";
         echo "</a>";
           echo "<p>".$get['image_text']."</p>";
-            echo "<p class='card-text'><small class='text-muted'>".$get['dateP']."</small></p>";
+            echo "<p class='card-text float-left'><small class='text-muted'>".$get['dateP']."</small></p>";
+            echo "<div class='btn-group'>
+  <a style='margin: -5px 0 0 5px' class='btn btn-success' href='like.php?type=post&id=".$get['id']."'><i class='fas fa-heart' style='margin-right: 5px'></i>".$get['likes']."</a>";
+  echo "</div>";
     echo "<hr>";
        echo "</div>";
     echo "</div>";

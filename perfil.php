@@ -30,7 +30,7 @@
     <i class="fas fa-cog" style="margin-right: 5px"></i>Ajustes
   </button>
   <div class="dropdown-menu dropdown-menu-right">
-    <a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt" style="margin-right: 5px"></i>Cerrar Session</a>
+    <a class="dropdown-item text-danger" href="controller/cerrarSesion.php"><i class="fas fa-sign-out-alt" style="margin-right: 5px"></i>Cerrar Session</a>
   </div>
 </div>
     </div>

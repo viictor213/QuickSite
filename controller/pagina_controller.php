@@ -4,10 +4,10 @@ error_reporting(1);
 
 session_start();
 
-//if ($_SESSION["autenticado"] !== null){
+if ($_SESSION["autenticado"] != null){
 
-    //header("location: home.php");
-//}else{
+    header("location: home.php");
+}else{
 
     require_once("model/pagina_model.php");
 
@@ -16,7 +16,7 @@ session_start();
     if(isset($_POST['login'])){
 
 
-        $userP = $_POST['user'];
+        $userP = strtolower($_POST['user']);
         $passwdP = $_POST['passwd'];
 
         $subnautic = $result->LoginUser($userP, $passwdP);
@@ -31,12 +31,12 @@ session_start();
         }
 
         if($userP != $user || $passwdP != $passwd){
-            echo "<script>alert('usuario o contraseña invalidos');
-                window.location = 'controller/confirm.php'</script>";
+            echo "<script>alert('usuario o contraseña invalidos')</script>";
+            
         }
         else{
             session_start();
-            $_SESSION["autenticado"] = $user;
+            $_SESSION["autenticado"] = $userP;
             header("location: home.php");
         }
 
@@ -44,40 +44,33 @@ session_start();
 
     if(isset($_POST['reg'])){
 
-        $image = $_FILES['imgReg']['name'];
-
-        if ($image == null){
-
-            $image = "default-profile-picture-5.jpg";
-        }
-
-        $target = "profile_images/" . basename($image);
-
+        $image = "default-profile-picture-5.jpg";
+        $banner = "default-banner.jpg";
         $userReg = $_POST['userReg'];
         $passwdReg = $_POST['passwdReg'];
         $emailReg = $_POST['emailReg'];
+        $fullnameReg = $_POST['fullnameReg'];
+        $birthReg = $_POST['birthReg'];
 
         $subnautic = $result->GetUserReg($userReg);
 
         foreach ($subnautic as $get) {
 
             $user = $get['user'];
-            $email = $get['email'];
         }
 
         if($userReg == $user){
             echo "<script>alert('El nombre de usuario ya existe')</script>";
         }else{
-            $subnautic = $result->RegisterUser($userReg, $passwdReg, $emailReg, $image);
-            move_uploaded_file($_FILES['imgReg']['tmp_name'], $target);
+            $subnautic = $result->RegisterUser($fullnameReg, $userReg, $passwdReg, $emailReg, $birthReg, $image, $banner);
             session_start();
             $_SESSION["autenticado"]= $userReg;
             echo $_SESSION['autenticado'];
-            echo "<script> alert('Te has registrado correctamente');
-           window.location = 'controller/confirm.php'</script>";
+            echo "<script> alert('Te has registrado correctamente')</script>";
+            header('refresh: 0');
         }
     }
 
     require_once("view/pagina_view.php");
 
-//}
+}

@@ -67,7 +67,10 @@ class pagina_model
 
     public function GetUserPost(){
 
-        $query = $this->db->query("SELECT * FROM post ORDER BY id DESC");
+        $query = $this->db->query("SELECT *,post.id, COUNT(post_likes.id) AS likes
+            FROM post
+            LEFT JOIN post_likes ON post.id = post_likes.post
+            GROUP BY post.id ORDER BY post.id DESC");
 
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
@@ -126,9 +129,32 @@ class pagina_model
 
     }
 
+    public function SetPostLike($idUser, $idPost){
+
+        $query = "INSERT INTO post_likes (user, post) SELECT :user, :post
+        FROM post WHERE EXISTS(
+            SELECT id
+            FROM post
+            WHERE id=".$idPost.")
+            AND NOT EXISTS(
+                SELECT id
+                FROM post_likes
+                WHERE user = ".$idUser."
+                AND post = ".$idPost.") LIMIT 1";
+
+        $stmt = $this->db->prepare($query);
+
+        $stmt->bindparam(':user', $idUser);
+        $stmt->bindparam(':post', $idPost);
+
+        $stmt->execute();
+
+    }
+
     public function DeleteUserPost($id){
 
-        $query = "DELETE FROM post WHERE id = :id";
+        $query = "DELETE FROM post WHERE id = :id;
+        DELETE FROM post_likes WHERE post = :id";
 
         $stmt = $this->db->prepare($query);
 
@@ -138,9 +164,9 @@ class pagina_model
 
     }
 
-    public function RegisterUser($user, $passwd, $email, $img){
+    public function RegisterUser($fullname, $user, $passwd, $email, $birth, $img, $banner){
 
-        $query = "INSERT INTO users (user, password, email, img_profile) VALUES (:user, :passwd, :email, :img)";
+        $query = "INSERT INTO users (full_name, user, password, email, birth, img_profile, banner_profile) VALUES (:fullname, :user, :passwd, :email, :birth, :img, :banner)";
 
         $stmt = $this->db->prepare($query);
 
@@ -148,7 +174,9 @@ class pagina_model
         $stmt->bindparam(':passwd', $passwd);
         $stmt->bindparam(':email', $email);
         $stmt->bindparam(':img', $img);
-
+        $stmt->bindparam(':fullname', $fullname);
+        $stmt->bindparam(':birth', $birth);
+        $stmt->bindparam(':banner', $banner);
 
         $stmt->execute();
 

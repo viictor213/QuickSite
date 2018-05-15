@@ -1,6 +1,8 @@
 <?php
+    
+    session_start();
 
-    //f ($_SESSION["autenticado"] !== null){
+    if ($_SESSION["autenticado"] != null){
 
         require_once ("model/pagina_model.php");
 
@@ -15,7 +17,7 @@
 
             $target = "images/" . basename($image);
 
-            $user = "joselitoxd";
+            $user = $_SESSION['autenticado'];
 
             $subnautic = $resultHome->UserProfile($user);
 
@@ -42,7 +44,7 @@
         $getPost = $resultHome->GetUserPost();
 
         require_once("view/pagina_view_home.php");
-    //}else{
+    }else{
 
-        //header("location: index.php");
-    //}
+        header("location: index.php");
+    }

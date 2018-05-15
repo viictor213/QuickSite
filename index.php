@@ -22,15 +22,15 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-2">
                       <h5 class="text-center">Iniciar Sesion</h5>
                        <li class="px-3 py-2">
-                           <form class="form" role="form">
+                           <form method="post">
                                 <div class="form-group">
-                                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                    <input name="user" placeholder="Usuario" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                    <input name="passwd" placeholder="Password" class="form-control form-control-sm" type="password" required="">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
                                 </div>
                             </form>
                         </li>

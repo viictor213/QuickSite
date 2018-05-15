@@ -1,13 +1,13 @@
 <?php
+session_start();
 error_reporting(0);
-//if ($_SESSION['autenticado'] !== null){
+if ($_SESSION['autenticado'] !== null){
   if($_GET['user'] != null){
 
     require_once("model/pagina_model.php");
 
     $result = new pagina_model();   
 
-    //$user = $_SESSION['autenticado'];
     $user = $_GET['user'];
 
     $getUser = $result->UserProfile($user);
@@ -57,13 +57,13 @@ error_reporting(0);
 
   }else{
 
-    header("location: perfil.php?user=joselitoxd");
+    header("location: perfil.php?user=".$_SESSION['autenticado']."");
 
   }
 
     
 
-//}else{
+}else{
 
-    //header("location: index.php");
-//}
+    header("location: index.php");
+}
